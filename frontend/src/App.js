@@ -1,10 +1,14 @@
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './css/App.css';
+import { StyleGuide } from "./pages/StyleGuide";
 
 function App() {
   return (
-    <div>
-      <h2>Welcome to the Practice Pan!</h2>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/design" element={<StyleGuide/>} />
+      </Routes>
+    </Router>
   );
 }
 
