@@ -9,8 +9,7 @@ const contentOfQuestion = new Content([
     new Piece("p", "What would be the equation of a circle located at (0, 4) with a radius of 5?"),
     new Piece("MultipleChoice", {
         "inputId": 3,
-        "totalNumberOfPossibleAnswers": 4,
-        "possibleAnswers": ["(x)^3-(y-4)^2=25","(x)^2-(y+4)^2=25","(x)^2-(y-4)^2=25","(x)^2-(y-4)^2=5"]
+        "possibleAnswers": [new Piece("Math", "(x)^3-(y-4)^2=25"),new Piece("Math","(x)^2-(y+4)^2=25"),new Piece("Math","(x)^2-(y-4)^2=25"),new Piece("Math","(x)^2-(y-4)^2=5")]
     })
 ])
 const expectedTime = 1000*60*3 // 3 minutes

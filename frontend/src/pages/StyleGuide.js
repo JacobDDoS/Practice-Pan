@@ -4,7 +4,11 @@ import { SimpleDropdown } from 'react-js-dropdavn'
 import 'react-js-dropdavn/dist/index.css'
 import { MathComponent } from "mathjax-react";
 import Algebra2Problem1 from '../data/Algebra2/Algebra2';
-import { MultipleChoiceQuestion } from '../components/Questions/MultipleChoiceQuestion';
+import { MultipleChoiceQuestion, Question } from '../components/Questions/Question';
+import { PieceComponent } from '../components/PieceComponent';
+import { ContentComponent } from '../components/ContentComponent';
+import { Piece } from '../data/Classes/Question/Piece';
+import { Content } from '../data/Classes/Question/Content';
 
 export const StyleGuide = () => {
   const data = [
@@ -21,6 +25,30 @@ export const StyleGuide = () => {
   const [math, setMath] = useState("\\int_{a}^{b} x^2 \\,dx ");
 
   const exampleMultipleChoiceQuestion = Algebra2Problem1.questions[0];
+
+  const examplePieces = new Content([
+    //p
+        new Piece("h3", "p (paragraph)"),
+        new Piece("p", "Hello! I am a p tag!!!"),
+    //h1
+        new Piece("h3", "h1 (Heading 1)"),
+        new Piece("h1", "Hello! I am a heading 1 tag!!!"),
+    //h2
+        new Piece("h3", "h2 (Heading 2)"),
+        new Piece("h2", "Hello! I am a heading 2 tag!!!"),
+    //h3
+        new Piece("h3", "h3 (Heading 3)"),
+        new Piece("h3", "Hello! I am a heading 3 tag!!!"),
+    //h4
+        new Piece("h3", "h4 (Heading 4)"),
+        new Piece("h4", "Hello! I am a heading 4 tag!!!"),
+    //Multiple Choice
+        new Piece("h3", "MultipleChoice"),
+        new Piece("MultipleChoice", {
+            "inputId": 3,
+            "possibleAnswers": [new Piece("Math", "(x)^3-(y-4)^2=25"),new Piece("h3","Heading 3"),new Piece("p","All other pieces work in here too!!"),new Piece("h4","Heading 4")]
+        })
+    ])
 
   return (
     <div className='main'>
@@ -145,11 +173,12 @@ export const StyleGuide = () => {
         </div>
         <div className='tertiary-gray p-10 br-30'>
             <h2>Pieces</h2>
+            <ContentComponent content={examplePieces}/>
         </div>
         <div className='tertiary-gray p-10 br-30'>
             <h2>Questions</h2>
             <h3>Multiple Choice</h3>
-            <MultipleChoiceQuestion question={exampleMultipleChoiceQuestion} />
+            <Question question={exampleMultipleChoiceQuestion} />
         </div>
         <div className='tertiary-gray p-10 br-30'>
             <h2>Example Problem</h2>
