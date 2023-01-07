@@ -4,10 +4,10 @@
 //     "toShuffle": "false",
 // }
 
-class Problem {
-    constructor(problemType, questions, toShuffle=true) {
+export class Problem {
+    constructor(problemType, questions, problemId) {
         this.problemType = problemType;
         this.questions = questions;
-        this.toShuffle = toShuffle;
+        this.problemId = problemId;
     }
 }

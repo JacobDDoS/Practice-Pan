@@ -3,6 +3,8 @@ import Code from '../components/Code';
 import { SimpleDropdown } from 'react-js-dropdavn'
 import 'react-js-dropdavn/dist/index.css'
 import { MathComponent } from "mathjax-react";
+import Algebra2Problem1 from '../data/Algebra2/Algebra2';
+import { MultipleChoiceQuestion } from '../components/Questions/MultipleChoiceQuestion';
 
 export const StyleGuide = () => {
   const data = [
@@ -17,6 +19,9 @@ export const StyleGuide = () => {
   }
 
   const [math, setMath] = useState("\\int_{a}^{b} x^2 \\,dx ");
+
+  const exampleMultipleChoiceQuestion = Algebra2Problem1.questions[0];
+
   return (
     <div className='main'>
         <div>
@@ -133,13 +138,21 @@ export const StyleGuide = () => {
                     <h3>Math</h3>
                     <div className="flex-column Code">
                         <MathComponent tex={math}/>
-                        <textarea name="mathInput" id="mathInput" cols="30" rows="10" onChange={(e)=>setMath(e.target.value)}>{math}</textarea>
+                        <textarea name="mathInput" id="mathInput" cols="30" rows="10" onChange={(e)=>setMath(e.target.value)} value={math}></textarea>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-            <h2>Components</h2>
+        <div className='tertiary-gray p-10 br-30'>
+            <h2>Pieces</h2>
+        </div>
+        <div className='tertiary-gray p-10 br-30'>
+            <h2>Questions</h2>
+            <h3>Multiple Choice</h3>
+            <MultipleChoiceQuestion question={exampleMultipleChoiceQuestion} />
+        </div>
+        <div className='tertiary-gray p-10 br-30'>
+            <h2>Example Problem</h2>
         </div>
     </div>
   )
