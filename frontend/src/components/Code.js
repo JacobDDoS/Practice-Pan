@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Prism from "prismjs";
 
+import '../css/prism.css'
+
 export default function Code({ code, language, editable }) {
   useEffect(() => {
     Prism.highlightAll();

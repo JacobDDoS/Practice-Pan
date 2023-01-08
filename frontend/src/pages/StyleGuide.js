@@ -152,7 +152,7 @@ export const StyleGuide = () => {
                 <div>
                     <h3>Code</h3>
                     <div className="flex-column">
-                        <Code code={`console.log('hello')\nconsole.log('meow')`} language="javascript" editable={true}/>
+                        <Code code={`console.log('hello')\nconsole.log('meow')`} language="javascript"/>
                     </div>
                 </div>
                 <div>
@@ -189,6 +189,7 @@ export const StyleGuide = () => {
         </div>
         <div className='tertiary-gray p-10 br-30'>
             <h2>Example Problem</h2>
+
         </div>
     </div>
   )

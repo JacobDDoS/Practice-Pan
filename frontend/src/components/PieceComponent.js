@@ -1,6 +1,7 @@
 import { MathComponent } from 'mathjax-react';
 import React from 'react'
 import { Piece } from "../data/Classes/Question/Piece"
+import Code from './Code';
 import { MultipleChoice } from './Inputs/MultipleChoice';
 
 export const PieceComponent = ({piece, input=null, setInput=null}) => {
@@ -31,6 +32,15 @@ export const PieceComponent = ({piece, input=null, setInput=null}) => {
     }
     else if (type === 'h4') {
         return <h4>{piece.value}</h4>
+    }
+    else if (type === "br") {
+        return <br/>
+    }
+    else if (type === "a") {
+        return <a href={piece.value}>{piece.value}</a>
+    }
+    else if (type === "Code") {
+        return <Code code={piece.value.code} language={piece.value.language}/>
     }
     else if (type === 'Math') {
         return <MathComponent tex={piece.value} />

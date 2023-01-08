@@ -3,7 +3,6 @@ import { Answer } from "../Classes/Question/Answer"
 import { Content } from "../Classes/Question/Content"
 import { Piece } from "../Classes/Question/Piece"
 import { Question } from "../Classes/Question/Question"
-import QuestionTypes from "../Enums/QuestionTypes"
 
 const contentOfQuestion = new Content([
     new Piece("p", "What would be the equation of a circle located at (0, 4) with a radius of 5?"),
