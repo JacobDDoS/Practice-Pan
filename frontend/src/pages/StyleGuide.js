@@ -42,6 +42,13 @@ export const StyleGuide = () => {
     //h4
         new Piece("h3", "h4 (Heading 4)"),
         new Piece("h4", "Hello! I am a heading 4 tag!!!"),
+    //Block Math
+        new Piece("h3", "Math Block"),
+        new Piece("Math", "Hello! \\ I \\ am \\ a \\ math \\ block! \\ - \\ \\sum_{x=1}^{10} x^2"),
+    //Inline Math
+        new Piece("h3", "Inline Math Block"),
+        new Piece("p", "Inline Math Block:   "),
+        new Piece("InlineMath", "Hello! \\ I \\ am \\ an \\ inline \\ math \\ block! \\ - \\ \\sum_{x=1}^{10} x^2"),
     //Multiple Choice
         new Piece("h3", "MultipleChoice"),
         new Piece("MultipleChoice", {

@@ -35,7 +35,9 @@ export const PieceComponent = ({piece, input=null, setInput=null}) => {
     else if (type === 'Math') {
         return <MathComponent tex={piece.value} />
     }
-    
+    else if (type === 'InlineMath') {
+        return <MathComponent tex={piece.value} display={false}/>
+    }
     else if (type === 'MultipleChoice') {
         return <MultipleChoice data={piece.value} handleInput={handleInput} />
     }

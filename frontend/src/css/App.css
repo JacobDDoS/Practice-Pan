@@ -194,6 +194,12 @@ body {
   border-radius: 30px;
 }
 
+/* Display */
+
+.inline {
+  display: inline;
+}
+
 /* Default styles */
 h1 {
   font-size: var(--fs-800);
